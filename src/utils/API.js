@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" 
+const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json" 
 const KEY = "43e306bae471445189ea8ce5824257cd"
 
 // Export an object with a "search" method that searches the NYT API for passed query (search words)
