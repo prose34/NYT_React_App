@@ -25,14 +25,14 @@ class Home extends Component {
   };
 
   getArticles = () => {
-    API.getArticles({
-      q: this.state.q,
-      start_year: this.state.start_year,
-      end_year: this.state.end_year
-    })
+    API.getArticles(
+      this.state.q,
+      this.state.start_year,
+      this.state.end_year
+    )
       .then(res =>
         this.setState({
-          articles: res.data,
+          articles: res.data.response.docs,
           message: !res.data.length
             ? "No New Articles Found, Try a Different Query"
             : ""
@@ -48,7 +48,10 @@ class Home extends Component {
 
   handleArticleSave = id => {
     const article = this.state.articles.find(article => article._id === id);
-    API.saveArticle(article).then(res => this.getArticles());
+    API.saveArticle(article).then(res => this.getArticles())
+      .catch((err) => {
+        console.log(err)
+      });
   };
 
   render() {

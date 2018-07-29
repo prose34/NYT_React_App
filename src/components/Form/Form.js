@@ -15,22 +15,22 @@ const Form = props => (
         required
       />
       <h4>
-        <strong>Start Year</strong>
+        <strong>Start Date</strong>
       </h4>
       <input
         className="form-control"
-        type="number"
+        type="date"
         value={props.start_year}
         name="start_year"
         onChange={props.handleInputChange}
         required
       />
       <h4>
-        <strong>End Year</strong>
+        <strong>End Date</strong>
       </h4>
       <input
         className="form-control"
-        type="number"
+        type="date"
         value={props.end_year}
         name="end_year"
         onChange={props.handleInputChange}
